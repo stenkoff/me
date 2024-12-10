@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Roboto:wght@700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="styles.css">
+      <link rel="stylesheet" href="reset.css">
+  </head>
+  <body>
+      <div class="container" style="height: 100%">
+      <div class="blocks" id="blocks">
+      </div>
+      <div class="me">
+          <b>
+              <a href="https://www.linkedin.com/in/stephaniehenkoff">
+                  Stephanie Henkoff
+              </a>
+          </b>
+      </div>
+      <div class="about">
+          <div>
+              <a href="https://www.middesk.com">
+                  <b>Middesk,</b>
+                  Technical Lead
+              </a>
+          </div>
+          <div>
+              <a href="https://www.harnesswealth.com">
+                  <b>Harness Wealth,</b>
+                  Software Engineer
+              </a>
+          </div>
+          <div>
+              <a href="https://www.kensho.com">
+                  <b>Kensho (S&P Global),</b>
+                  Software Engineer
+              </a>
+          </div>
+          <div>
+              <a href="https://www.kensho.com">
+                  <b>Northwestern University,</b>
+                  B.A.
+              </a>
+          </div>
+          <div>
+              <b>New York City Marathon,</b>
+              Finisher
+          </div>
+          <div
+              class="strava-embed-placeholder"
+              data-embed-type="activity"
+              data-embed-id="12845228028"
+              data-style="standard"
+              data-from-embed="false"
+              embed-width="responsive"
+              max-height="500"
+          >
+          </div>
+      </div>
+  </div>
+  </body>
+  <script>
+      const blockRatios = [0, 1]
+
+      while (blockRatios.length < 11) {
+          const [a, b] = blockRatios.slice(-2)
+          blockRatios.push(a + b)
+      }
+
+      const blocks = document.getElementById('blocks')
+      const totalBlockRatio = blockRatios.reduce((sum, el) => sum + el, 0.0) * 2 // height + margin
+      const blockMultiplier = window.innerHeight / totalBlockRatio
+
+      blockRatios.forEach((blockRatio, index) => {
+          const height = blockMultiplier * blockRatios[blockRatios.length - index]
+          const margin =  blockMultiplier * blockRatio
+          const block = document.createElement('div')
+          block.classList.add('block')
+          block.style = `margin-bottom: ${margin}px; height: ${height}px; opacity: 1`
+          blocks.appendChild(block)
+      })
+  </script>
+  <script rel="preconnect" src="https://strava-embeds.com/embed.js"></script>
+</html>

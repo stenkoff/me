@@ -1,0 +1,49 @@
+:root {
+  --background-dark: rgb(0 82 76);
+  --background-light: rgb(245 247 247);
+  --font-size: 1rem;
+  --block-color: rgb(6 35 30);;
+  --spacing: 2.5rem;
+}
+
+html {
+  background: linear-gradient(358deg, var(--background-light) 45%, var(--background-dark) 100%);
+  color: var(--color);
+  height: auto;
+}
+
+.me {
+  bottom: var(--spacing);
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  font-size: var(--font-size);
+  height: 100%;
+}
+
+.blocks {
+  height: 100vh;
+  position: relative;
+}
+
+.block {
+  background: var(--block-color);
+  width: 100%;
+}
+
+.about {
+  padding-bottom: var(--spacing);
+  background-color: transparent;
+  justify-content: center;
+  display: grid;
+  gap: var(--spacing);
+  text-align: center;
+}
+
+a {
+  color: var(--block-color);
+  text-decoration: none;
+}
